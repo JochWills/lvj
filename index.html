@@ -21,7 +21,7 @@
   }
 
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:73px;}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
@@ -151,6 +151,12 @@
   .btn.primary:hover{background:var(--green-deep); border-color:var(--green-deep);}
   .btn.ghost{color:#fff; border-color:rgba(255,255,255,0.4);}
   .btn.ghost:hover{border-color:var(--green);}
+  .btn.facebook{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#1877F2; border-color:#1877F2; color:#fff;
+  }
+  .btn.facebook:hover{background:#166FE5; border-color:#166FE5;}
+  .btn.facebook svg{width:16px; height:16px; flex-shrink:0;}
 
   .hero-fact{
     border:1px solid rgba(255,255,255,0.28);
@@ -337,6 +343,7 @@
   }
   .contact-list a{text-decoration:none; color:#fff;}
   .contact-list a:hover{color:var(--green);}
+  .contact-list + .btn{margin-top:28px;}
 
   .contact-panel{
     border:1px solid var(--line-dark);
@@ -354,6 +361,46 @@
   @media (max-width:760px){
     .hero-inner, .story-grid, .contact-grid{grid-template-columns:1fr;}
     .hero-fact{margin-top:8px;}
+    .story-grid{row-gap:24px;}
+    .story h2{font-size:clamp(30px,8vw,36px); line-height:1.15;}
+  }
+
+  /* ---------- ACCREDITATION STRIP ---------- */
+  .accred-strip{
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+  }
+  .accred-track{
+    display:flex;
+    align-items:center;
+    width:max-content;
+    padding:2px 0 12px;
+    animation:accred-scroll 34s linear infinite;
+  }
+  .accred-strip:hover .accred-track{
+    animation-play-state:paused;
+  }
+  .accred-item{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.72);
+    white-space:nowrap;
+  }
+  .accred-sep{
+    color:var(--green);
+    margin:0 28px;
+    font-size:12px;
+  }
+  @keyframes accred-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  @media (max-width:760px){
+    .accred-track{padding-top:8px;}
   }
 
   /* ---------- FOOTER ---------- */
@@ -410,9 +457,33 @@
     </div>
   </div>
   <svg class="horizon" viewBox="0 0 1120 64" preserveAspectRatio="none" aria-hidden="true">
-    <line x1="0" y1="32" x2="1120" y2="32" stroke="#8FC24C" stroke-width="1" opacity="0.5"/>
-    <circle cx="1060" cy="32" r="4" fill="#8FC24C"/>
+    <line x1="0" y1="56" x2="1120" y2="56" stroke="#8FC24C" stroke-width="1" opacity="0.5"/>
+    <circle cx="1060" cy="56" r="4" fill="#8FC24C"/>
   </svg>
+  <div class="accred-strip" aria-label="Accreditations">
+    <div class="accred-track">
+      <span class="accred-item">Financial Services Board (FSB No. 45063)</span>
+      <span class="accred-sep">•</span>
+      <span class="accred-item">Financial Intermediaries Association (FIA No. 25007195)</span>
+      <span class="accred-sep">•</span>
+      <span class="accred-item">Masthead Financial Advisory Association (No. 900571)</span>
+      <span class="accred-sep">•</span>
+      <span class="accred-item">CC Registration No. 2008/209914/23</span>
+      <span class="accred-sep">•</span>
+      <span class="accred-item">VAT Registration No. 4300264951</span>
+      <span class="accred-sep">•</span>
+      <span class="accred-item" aria-hidden="true">Financial Services Board (FSB No. 45063)</span>
+      <span class="accred-sep" aria-hidden="true">•</span>
+      <span class="accred-item" aria-hidden="true">Financial Intermediaries Association (FIA No. 25007195)</span>
+      <span class="accred-sep" aria-hidden="true">•</span>
+      <span class="accred-item" aria-hidden="true">Masthead Financial Advisory Association (No. 900571)</span>
+      <span class="accred-sep" aria-hidden="true">•</span>
+      <span class="accred-item" aria-hidden="true">CC Registration No. 2008/209914/23</span>
+      <span class="accred-sep" aria-hidden="true">•</span>
+      <span class="accred-item" aria-hidden="true">VAT Registration No. 4300264951</span>
+      <span class="accred-sep" aria-hidden="true">•</span>
+    </div>
+  </div>
 </section>
 
 <section class="story" id="about">
@@ -546,10 +617,6 @@
           <span>58 Main Road, Walmer, Port Elizabeth, 6070</span>
         </li>
         <li>
-          <span class="label">Post</span>
-          <span>PO Box 13217, Humewood, 6013</span>
-        </li>
-        <li>
           <span class="label">Call</span>
           <a href="tel:+27413732540">+27 41 373 2540</a>
         </li>
@@ -558,6 +625,11 @@
           <a href="mailto:info@lvjbrokers.co.za">info@lvjbrokers.co.za</a>
         </li>
       </ul>
+
+      <a class="btn facebook" href="https://www.facebook.com/lvjbrokers" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 320 512" aria-hidden="true"><path fill="#fff" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+        Find us on Facebook
+      </a>
     </div>
 
     <div class="contact-panel">
