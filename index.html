@@ -190,29 +190,24 @@
   }
   .story-copy p + p{margin-top:16px;}
 
-  .timeline{
+  .legacy{
     margin-top:40px;
-    position:relative;
     padding-top:28px;
     border-top:1px solid var(--line);
   }
-  .timeline-line{
-    position:relative; height:2px; background:var(--line); margin:34px 0 14px;
+  .legacy p{
+    margin:0;
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    font-size:clamp(22px,2.6vw,28px);
+    line-height:1.35;
+    color:var(--ink);
   }
-  .timeline-line::before{
-    content:"";
-    position:absolute; left:0; top:50%; transform:translateY(-50%);
-    width:9px; height:9px; border-radius:50%; background:var(--green);
+  .legacy p em{
+    font-style:italic;
+    color:var(--green);
   }
-  .timeline-line::after{
-    content:"";
-    position:absolute; right:0; top:50%; transform:translateY(-50%);
-    width:9px; height:9px; border-radius:50%; background:var(--green-deep);
-  }
-  .timeline-labels{
-    display:flex; justify-content:space-between;
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:rgba(58,58,60,0.6);
-  }
+  
 
   /* ---------- SERVICES ---------- */
   .services{
@@ -403,7 +398,7 @@
     <div>
       <p class="eyebrow">Independent &amp; licensed · Walmer, Port Elizabeth</p>
       <h1>Financial planning built to <em>outlast</em> the year it was made in.</h1>
-      <p class="hero-sub">LVJ Financial Services has advised individuals and families in Walmer since 1997 — on life cover, investments, retirement, and the paperwork that protects the people you love.</p>
+      <p class="hero-sub">LVJ Financial Services has advised individuals and families in South Africa since 1997 — on life cover, investments, retirement, and the paperwork that protects the people you love.</p>
       <div class="hero-cta">
         <a class="btn primary" href="#contact">Get in Touch</a>
         <a class="btn ghost" href="#services">Our Offering</a>
@@ -430,13 +425,9 @@
       <p>We're a licensed and independent financial planning practice based in the suburb of Walmer, Port Elizabeth. Lindy van Jaarsveldt Financial Services cc was established by Lindy in 1997, after many years in the industry working for a corporate company — and the practice has stayed independent ever since.</p>
       <p>To ensure our clients have continuity, Lindy's succession plan has included the services of her daughter, Layla Williams, who joined as Director &amp; Financial Advisor. Independence means we're not selling a house-brand policy — we work out what actually protects your income, your family, and your retirement, and recommend the product that fits.</p>
 
-      <div class="timeline">
-        <p class="eyebrow">In practice since</p>
-        <div class="timeline-line"></div>
-        <div class="timeline-labels">
-          <span>1997 — Lindy opens the practice</span>
-          <span>Layla leads the way forward — 2026</span>
-        </div>
+      <div class="legacy">
+        <p>In 1997, Lindy opened these doors. <br><em>Layla's kept them open ever since.</em></p>
+        
       </div>
     </div>
   </div>
