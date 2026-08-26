@@ -423,6 +423,42 @@
     border-bottom:1px solid rgba(255,255,255,0.3);
   }
   .footer-links a:hover{color:var(--green); border-color:var(--green);}
+
+  /* ---------- LARGE MONITORS (27"+ / 1440p and up) ---------- */
+  @media (min-width:1800px){
+    .wrap{max-width:1360px;}
+    .nav{max-width:1360px;}
+
+    .hero{padding-top:140px;}
+    .hero-inner{max-width:1360px; padding-bottom:100px; gap:72px;}
+    .hero h1{font-size:clamp(60px,3.2vw,74px); max-width:17ch;}
+    .hero-sub{font-size:19px; margin-top:26px;}
+    .hero-cta{margin-top:40px;}
+    .hero-fact{padding:34px 30px;}
+    .hero-fact .num{font-size:58px;}
+    .hero-fact p{font-size:15.5px;}
+
+    .story{padding:140px 0;}
+    .story h2{font-size:44px; line-height:1.15;}
+    .story-copy p{font-size:18px;}
+    .legacy p{font-size:clamp(26px,1.6vw,32px);}
+
+    .services{padding:140px 0;}
+    .services-head{margin-bottom:64px;}
+    .services-head h2{font-size:44px;}
+    .services-head p{font-size:17px;}
+
+    .team{padding:140px 0;}
+    .team h2{font-size:44px;}
+    .team > .wrap > p{font-size:17px;}
+
+    .contact{padding:140px 0 110px;}
+    .contact h2{font-size:44px;}
+    .contact-copy{font-size:17px;}
+    .contact-panel{padding:44px;}
+    .contact-panel h3{font-size:26px;}
+    .contact-panel p{font-size:16px;}
+  }
 </style>
 </head>
 <body id="top">
