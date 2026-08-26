@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/images/favicon.png">
+<title>POPI Privacy Policy Statement | LVJ Financial Services</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#3A3A3C;
+    --panel:#3F3F41;
+    --paper:#FFFFFF;
+    --paper-2:#F2F2EE;
+    --green:#8FC24C;
+    --green-deep:#6C9C37;
+    --green-pale:#E4F1D4;
+    --line: rgba(58,58,60,0.14);
+    --line-dark: rgba(255,255,255,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+
+  .eyebrow{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:0.01em;
+    color:var(--green-deep);
+  }
+
+  :focus-visible{
+    outline:2px solid var(--green-deep);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 32px;
+    max-width:1120px; margin:0 auto;
+  }
+  .brandmark{
+    display:flex; align-items:center;
+    text-decoration:none; color:var(--ink);
+  }
+  .brandmark img{ height:44px; width:auto; }
+  .navlinks{
+    display:flex; gap:32px; list-style:none; margin:0; padding:0;
+    font-size:14px; font-weight:500;
+  }
+  .navlinks a{text-decoration:none; color:var(--ink); opacity:0.75; transition:opacity .15s;}
+  .navlinks a:hover, .navlinks a.active{opacity:1; color:var(--green-deep);}
+
+  @media (max-width:760px){
+    .navlinks{display:none;}
+  }
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-hero{
+    background:var(--panel);
+    color:#fff;
+    padding:72px 0 56px;
+  }
+  .page-hero .eyebrow{color:var(--green);}
+  .page-hero h1{
+    color:#fff;
+    font-size:clamp(30px,4vw,42px);
+    margin-top:12px;
+    max-width:26ch;
+  }
+  .page-hero p{
+    margin-top:18px;
+    color:rgba(255,255,255,0.72);
+    font-size:16px;
+    max-width:56ch;
+  }
+
+  /* ---------- POLICY CONTENT ---------- */
+  .policy{
+    padding:72px 0 96px;
+  }
+  .policy-body{
+    max-width:72ch;
+  }
+  .policy-body p{
+    font-size:15.5px;
+    color:rgba(58,58,60,0.85);
+    margin:0 0 22px;
+  }
+  .policy-body ul{
+    margin:0 0 26px;
+    padding-left:22px;
+  }
+  .policy-body li{
+    font-size:15.5px;
+    color:rgba(58,58,60,0.85);
+    margin-bottom:12px;
+  }
+  .policy-body h2{
+    font-size:15px;
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-weight:500;
+    color:var(--green-deep);
+    margin:0 0 18px;
+  }
+
+  .regulator-card{
+    margin-top:8px;
+    border:1px solid var(--line);
+    border-top:3px solid var(--green);
+    background:var(--paper-2);
+    padding:28px 30px;
+    max-width:72ch;
+  }
+  .regulator-card h3{
+    font-size:18px;
+    margin-bottom:16px;
+  }
+  .regulator-card ul{
+    list-style:none; margin:0; padding:0;
+  }
+  .regulator-card li{
+    display:grid; grid-template-columns:80px 1fr; gap:14px;
+    font-size:14.5px;
+    padding:10px 0;
+    border-top:1px solid var(--line);
+  }
+  .regulator-card li:first-of-type{border-top:none;}
+  .regulator-card .label{
+    font-family:'Newsreader', serif; font-weight:500; font-size:14.5px;
+    color:var(--green-deep);
+  }
+  .regulator-card a{text-decoration:none; border-bottom:1px solid transparent;}
+  .regulator-card a:hover{border-color:currentColor; color:var(--green-deep);}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{
+    background:var(--panel); color:rgba(255,255,255,0.5);
+    border-top:1px solid var(--line-dark);
+    padding:24px 0;
+    font-size:12.5px;
+  }
+  footer.site .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 24px;
+  }
+  .footer-links{
+    display:flex; gap:20px;
+  }
+  .footer-links a{
+    color:rgba(255,255,255,0.7);
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+  }
+  .footer-links a:hover{color:var(--green); border-color:var(--green);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brandmark" href="/">
+      <img src="/images/logo.png" alt="LVJ Financial Services">
+    </a>
+    <ul class="navlinks">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#team">Team</a></li>
+      <li><a href="/compliance/">Compliance</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Protection of Personal Information</p>
+    <h1>POPI Privacy Policy Statement</h1>
+    <p>How LVJ Financial Services collects, uses and protects your Personal Information.</p>
+  </div>
+</section>
+
+<section class="policy">
+  <div class="wrap">
+    <div class="policy-body">
+      <p>Respecting and protecting your Personal Information is very important to us. It is also a Constitutional right, legal, and good business practice requirement, which we regard highly.</p>
+
+      <p>In line with the requirements of the Protection of Personal Information Act, 4 of 2013 (the Act), we:</p>
+
+      <ul>
+        <li>Accept joint responsibility and accountability to responsibly manage and protect your Personal Information when providing you with medical aid advice and intermediary services;</li>
+        <li>Undertake to collect and access your Personal Information directly from you or from a third party with your prior and written approval while respecting you right to withdraw your consent for the processing of your Personal Information;</li>
+        <li>Undertake to only collect and process Personal Information that is necessary for us to obtain a holistic view of your financial circumstances, needs and objectives, allowing us to conduct a suitable needs analysis, provide you with proper financial advice, make recommendations as to the best financial product that will satisfy your identified needs and objectives and provide assistance in the conclusion of the necessary business transactions;</li>
+        <li>Undertake not to share your Personal Information with any third party, unless when required for the purpose of assisting you with the conclusion of a transaction or when required to do so by the law;</li>
+        <li>Undertake to be open and transparent regarding the Personal Information being collected, the reason for and manner of collection of such information;</li>
+        <li>Undertake to safeguard and protect your Personal Information in our possession through the necessary technological and operations processes;</li>
+        <li>Undertake to update and correct your Personal Information kept on file; and</li>
+        <li>Undertake not to retain Personal Information longer that is required by the relevant legislation governing the financial sector.</li>
+      </ul>
+
+      <p>We (and indirectly the financial product providers that we are contracted with) need to gather, process, and store your Personal Information for reasons:</p>
+
+      <ul>
+        <li>To conduct a suitable financial needs analysis and identify your financial needs and objectives;</li>
+        <li>To share with our contracted financial product providers and assist you in the conclusion of required business transactions you requested;</li>
+        <li>To maintain our relationship with you;</li>
+        <li>To respond to your queries and provide assistance when required to do so;</li>
+        <li>To confirm and verify your identity or to verify that you are an authorised user for security purposes;</li>
+        <li>For quoting and underwriting purposes;</li>
+        <li>To assess and process claims;</li>
+        <li>For audit and record-keeping purposes; and</li>
+        <li>In connection with possible requirements by the Information Regulator or other Government agencies allowed by law, legal proceedings, or court rulings.</li>
+      </ul>
+
+      <p>We may need to share your Personal Information and/or utilise software or online platforms to enter and process your information for an application, claims, or business management purposes. This will only be done in strict adherence to the requirements of the Act.</p>
+
+      <p>Any additional information or concerns can be found and raised with the Information Regulator, who can be contacted as shared below, but please feel free to contact Layla Williams first to discuss any questions or concerns you may have:</p>
+    </div>
+
+    <div class="regulator-card">
+      <h3>Information Regulator</h3>
+      <ul>
+        <li><span class="label">Website</span><a href="https://www.justice.gov.za/inforeg/" target="_blank" rel="noopener">www.justice.gov.za/inforeg</a></li>
+        <li><span class="label">Tel</span><a href="tel:0124064818">012 406 4818</a></li>
+        <li><span class="label">Email</span><a href="mailto:inforeg@justice.gov.za">inforeg@justice.gov.za</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© LVJ Financial Services · Est. 1997 · Walmer, Port Elizabeth</span>
+    <nav class="footer-links">
+      <a href="/compliance/">Compliance Documents</a>
+      <a href="/popi-privacy-policy/">POPI Privacy Policy</a>
+    </nav>
+    <span>Licensed &amp; independent financial planning practice</span>
+  </div>
+</footer>
+
+</body>
+</html>

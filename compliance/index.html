@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/images/favicon.png">
+<title>Compliance Documents | LVJ Financial Services</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#3A3A3C;
+    --panel:#3F3F41;
+    --paper:#FFFFFF;
+    --paper-2:#F2F2EE;
+    --green:#8FC24C;
+    --green-deep:#6C9C37;
+    --green-pale:#E4F1D4;
+    --line: rgba(58,58,60,0.14);
+    --line-dark: rgba(255,255,255,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+
+  .eyebrow{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:18px;
+    letter-spacing:0.01em;
+    color:var(--green-deep);
+  }
+
+  :focus-visible{
+    outline:2px solid var(--green-deep);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 32px;
+    max-width:1120px; margin:0 auto;
+  }
+  .brandmark{
+    display:flex; align-items:center;
+    text-decoration:none; color:var(--ink);
+  }
+  .brandmark img{ height:44px; width:auto; }
+  .navlinks{
+    display:flex; gap:32px; list-style:none; margin:0; padding:0;
+    font-size:14px; font-weight:500;
+  }
+  .navlinks a{text-decoration:none; color:var(--ink); opacity:0.75; transition:opacity .15s;}
+  .navlinks a:hover, .navlinks a.active{opacity:1; color:var(--green-deep);}
+
+  @media (max-width:760px){
+    .navlinks{display:none;}
+  }
+
+  .btn{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    font-size:16px;
+    letter-spacing:0.01em;
+    padding:13px 22px;
+    text-decoration:none;
+    display:inline-block;
+    border:1px solid var(--green);
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .btn.primary{
+    background:var(--green);
+    border-color:var(--green);
+    color:#fff;
+  }
+  .btn.primary:hover{background:var(--green-deep); border-color:var(--green-deep);}
+  .btn.ghost{color:var(--ink); border-color:var(--line);}
+  .btn.ghost:hover{border-color:var(--green-deep); color:var(--green-deep);}
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-hero{
+    background:var(--panel);
+    color:#fff;
+    padding:72px 0 56px;
+  }
+  .page-hero .eyebrow{color:var(--green);}
+  .page-hero h1{
+    color:#fff;
+    font-size:clamp(32px,4vw,46px);
+    margin-top:12px;
+    max-width:20ch;
+  }
+  .page-hero p{
+    margin-top:18px;
+    color:rgba(255,255,255,0.72);
+    font-size:16px;
+    max-width:56ch;
+  }
+
+  /* ---------- DOCUMENTS ---------- */
+  .documents{
+    padding:72px 0 96px;
+  }
+  .documents-intro{
+    max-width:64ch;
+    color:rgba(58,58,60,0.75);
+    font-size:15.5px;
+    margin-bottom:40px;
+  }
+  .doc-group{
+    margin-bottom:52px;
+  }
+  .doc-group:last-child{
+    margin-bottom:0;
+  }
+  .doc-group-title{
+    font-size:22px;
+    padding-bottom:14px;
+    margin-bottom:0;
+    border-bottom:2px solid var(--green);
+  }
+  .doc-list{
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .doc-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding:22px 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .doc-info h3{
+    font-size:17px;
+    font-weight:500;
+  }
+  .doc-info p{
+    margin:6px 0 0;
+    font-size:13.5px;
+    color:rgba(58,58,60,0.62);
+    max-width:56ch;
+  }
+  .doc-action{
+    flex-shrink:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    color:var(--green-deep);
+    border:1px solid var(--green);
+    padding:9px 16px;
+    white-space:nowrap;
+    transition:background .15s,color .15s;
+  }
+  .doc-action:hover{background:var(--green); color:#fff;}
+  @media (max-width:600px){
+    .doc-item{flex-direction:column; align-items:flex-start; gap:14px;}
+  }
+
+  .documents-note{
+    margin-top:40px;
+    padding:20px 24px;
+    background:var(--paper-2);
+    border-left:3px solid var(--green);
+    font-size:14px;
+    color:rgba(58,58,60,0.75);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer.site{
+    background:var(--panel); color:rgba(255,255,255,0.5);
+    border-top:1px solid var(--line-dark);
+    padding:24px 0;
+    font-size:12.5px;
+  }
+  footer.site .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 24px;
+  }
+  .footer-links{
+    display:flex; gap:20px;
+  }
+  .footer-links a{
+    color:rgba(255,255,255,0.7);
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+  }
+  .footer-links a:hover{color:var(--green); border-color:var(--green);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brandmark" href="/">
+      <img src="/images/logo.png" alt="LVJ Financial Services">
+    </a>
+    <ul class="navlinks">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#team">Team</a></li>
+      <li><a href="/compliance/" class="active">Compliance</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Regulatory &amp; compliance</p>
+    <h1>Compliance Documents</h1>
+    <p>Policy and PAIA documents for LVJ Financial Services, made available to clients and members of the public.</p>
+  </div>
+</section>
+
+<section class="documents">
+  <div class="wrap">
+    <p class="documents-intro">
+      As a licensed financial services provider, LVJ Financial Services makes the documents below available to clients and members of the public. Each document opens as a PDF in a new tab.
+    </p>
+
+    <div class="doc-group">
+      <h2 class="doc-group-title">Complaints Resolution</h2>
+      <ul class="doc-list">
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>2023 Complaints Resolution Policy</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/2023-Complaints-Resolution-Policy.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doc-group">
+      <h2 class="doc-group-title">Conflict of Interest</h2>
+      <ul class="doc-list">
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>Compliance Notice in terms of section 83(3)(d) of PAIA</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/Compliance-Notice-in-terms-of-section-833d-of-PAIA..docx.docx.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doc-group">
+      <h2 class="doc-group-title">PAIA</h2>
+      <ul class="doc-list">
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA Form1-Reg3 Request a copy of the Guide from Information Officer</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form1-Reg3-Request-a-copy-of-the-Guide-from-Information-Officer.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA Form2-Reg7 Request for access to record</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form2-Reg7-Request-for-access-to-record.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA Form5-Reg10 Complaint Form</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form5-Reg10-Complaint-Form.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA Form13-Reg14-1 Request for Compliance Assessment</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form13-Reg14-1-Request-for-Compliance-Assessment.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA Regulations</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Regulations.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA-Form 2-Reg 7-Request for access to record</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form-2-Reg-7-Request-for-access-to-record.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA-Form 3-Reg 8-Outcome of request &amp; of fees payable</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form-3-Reg-8-Outcome-of-request-of-fees-payable.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+        <li class="doc-item">
+          <div class="doc-info">
+            <h3>PAIA-Form 4-Reg 9-Internal appeal form</h3>
+          </div>
+          <a class="doc-action" href="/compliance-docs/PAIA-Form-4-Reg-9-Internal-appeal-form.pdf" target="_blank" rel="noopener">Download</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© LVJ Financial Services · Est. 1997 · Walmer, Port Elizabeth</span>
+    <nav class="footer-links">
+      <a href="/compliance/">Compliance Documents</a>
+      <a href="/popi-privacy-policy/">POPI Privacy Policy</a>
+    </nav>
+    <span>Licensed &amp; independent financial planning practice</span>
+  </div>
+</footer>
+
+</body>
+</html>
