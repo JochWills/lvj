@@ -1,0 +1,23 @@
+# Redirect URLs from the old WordPress site to the matching section of the new one-page site.
+# Old URLs still appear in Google results (sitelinks), so these are permanent (301) redirects.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Leave real files and folders alone (index.html, /compliance/, /popi-privacy-policy/, images, PDFs)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Old page slugs -> new sections (match on keywords, since old slugs had suffixes like -2, -3, -9)
+RewriteRule contact                                                  /#contact  [R=301,NE,NC,L]
+RewriteRule (team|staff|people)                                      /#team     [R=301,NE,NC,L]
+RewriteRule (about|administrator|author)                             /#about    [R=301,NE,NC,L]
+RewriteRule (offering|service|planning|protection|short-term|cover|invest|retirement|estate|medical|insurance|risk|disability|funeral|business) /#services [R=301,NE,NC,L]
+RewriteRule (compliance|paia|complaint|faisa|fais)                   /compliance/ [R=301,NC,L]
+RewriteRule (privacy|popi)                                           /popi-privacy-policy/ [R=301,NC,L]
+
+# Anything else that no longer exists (old WordPress pages, /wp-admin, feeds, etc.) -> homepage
+RewriteRule ^.+$ / [R=301,L]
+</IfModule>
